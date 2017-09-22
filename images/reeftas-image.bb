@@ -30,35 +30,6 @@ WIFI_SUPPORT = " \
     wpa-supplicant \
  "
 
-DEV_SDK_INSTALL = " \
-    binutils \
-    binutils-symlinks \
-    coreutils \
-    cpp \
-    cpp-symlinks \
-    diffutils \
-    file \
-    gcc \
-    gcc-symlinks \
-    g++ \
-    g++-symlinks \
-    gettext \
-    git \
-    ldd \
-    libstdc++ \
-    libstdc++-dev \
-    libtool \
-    make \
-    perl-modules \
-    pkgconfig \
-    python-modules \
- "
-
-DEV_EXTRAS = " \
-    ntp \
-    ntp-tickadj \
-"
-
 EXTRA_TOOLS_INSTALL = " \
     bzip2 \
     devmem2 \
@@ -89,14 +60,16 @@ RPI_STUFF = " \
     wiringpi \
  "
 
+REEFTAS = " \
+     reeftas-webui \
+"
+
 IMAGE_INSTALL += " \
     ${CORE_OS} \
-    ${DEV_SDK_INSTALL} \
-    ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${RPI_STUFF} \
-    ${SYSTEMD_EXTRAS} \
     ${WIFI_SUPPORT} \
+    ${REEFTAS} \
 "
 
 set_local_timezone() {

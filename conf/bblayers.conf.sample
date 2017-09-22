@@ -15,6 +15,8 @@ BBLAYERS ?= " \
     ${YOCTO_ROOT}/meta-openembedded/meta-multimedia \
     ${YOCTO_ROOT}/meta-openembedded/meta-networking \
     ${YOCTO_ROOT}/meta-openembedded/meta-python \
+    ${YOCTO_ROOT}/meta-nodejs\
+    ${YOCTO_ROOT}/meta-nodejs-contrib\
     ${YOCTO_ROOT}/meta-qt5 \
     ${YOCTO_ROOT}/meta-raspberrypi \
     ${YOCTO_ROOT}/meta-rpi \
