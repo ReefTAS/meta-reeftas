@@ -20,5 +20,6 @@ BBLAYERS ?= " \
     ${YOCTO_ROOT}/meta-qt5 \
     ${YOCTO_ROOT}/meta-raspberrypi \
     ${YOCTO_ROOT}/meta-rpi \
+    ${YOCTO_ROOT}/meta-go \
     ${YOCTO_ROOT}/meta-reeftas \
 "
