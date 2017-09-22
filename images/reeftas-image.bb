@@ -14,10 +14,6 @@ CORE_OS = " \
     tzdata \
  "
 
-SYSTEMD_EXTRAS = " \
-    systemd-networking \
-"
-
 WIFI_SUPPORT = " \
     crda \
     iw \
