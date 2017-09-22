@@ -15,6 +15,15 @@ DEPENDS += "nodejs"
 FILES_${PN} = "\
     /www/* \
 " 
+BOWER_FLAGS = "\
+    --config.storage.packages=${WORKDIR}/.bower/packages \
+    --config.storage.registry=${WORKDIR}/.bower/registry \
+    --config.storage.links=${WORKDIR}/.bower/links \
+"
+
+do_bower_install_prepend () {
+	export XDG_CONFIG_HOME=${WORKDIR}
+}
 
 inherit  bower-install gulp	
 do_install () {
