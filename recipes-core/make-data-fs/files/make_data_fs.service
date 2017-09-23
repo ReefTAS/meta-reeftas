@@ -1,0 +1,23 @@
+#  This file is part of ReefTAS
+#  
+#  The purpose of this service is to create a ext4 filesystem on
+#  data partition
+
+[Unit]
+Description=
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=expand_data.service
+Before=local-fs-pre.target local-fs.target
+Wants=local-fs-pre.target
+ConditionPathExists=/etc/fstab
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/sbin/mkfs.ext4 /dev/mmcblk0p3
+ExecStartPost=/bin/systemctl disable make_data_fs
+
+
+[Install]
+RequiredBy=local-fs-pre.target

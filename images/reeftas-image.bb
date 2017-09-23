@@ -10,8 +10,12 @@ inherit core-image
 DEPENDS += "bcm2835-bootfiles"
 
 CORE_OS = " \
-    openssh openssh-keygen openssh-sftp-server \
+    openssh \
+    openssh-keygen \
+    openssh-sftp-server \
     tzdata \
+    expand-data \
+    make-data-fs \
  "
 
 WIFI_SUPPORT = " \

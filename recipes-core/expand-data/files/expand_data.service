@@ -1,0 +1,21 @@
+#  This file is part of ReefTAs
+#  
+#  The purpose of this file is to resize /dev/mmcblk0p3 to size of MMC
+
+[Unit]
+Description=Resize /dev/mmcblk0p3 to remaining space of MMC.
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=systemd-fsck-root.service
+Before=local-fs-pre.target local-fs.target
+Wants=local-fs-pre.target
+ConditionPathExists=/etc/fstab
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash -c "echo ",+" | sfdisk -N 3  --no-reread /dev/mmcblk0"
+ExecStartPost=/bin/systemctl disable expand_data
+
+[Install]
+RequiredBy=local-fs-pre.target
