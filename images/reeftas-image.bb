@@ -47,6 +47,7 @@ EXTRA_TOOLS_INSTALL = " \
     util-linux \
     wget \
     zip \
+    dnsmasq \
  "
 
 RPI_STUFF = " \
