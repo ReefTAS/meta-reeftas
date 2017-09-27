@@ -1,0 +1,18 @@
+[Unit]
+Description=ReefTAS PostgreSQL database server initial setup
+After=network.target reeftas_svr_initial_setup.service
+
+[Service]
+Type=forking
+
+# Location of database directory
+EnvironmentFile=/etc/default/reeftas/reeftas_db
+
+ExecStart=@BINDIR@/reeftas_db_initial_setup.sh ${PGDATA} ${REEFTAS_USER} ${REEFTAS_GROUP}
+ExecStartPost=/bin/systemctl disable reeftas_db_initial_setup
+
+# Give a reasonable amount of time for the server to start up/shut down
+TimeoutSec=300
+
+[Install]
+WantedBy=multi-user.target

@@ -16,6 +16,7 @@ CORE_OS = " \
     tzdata \
     expand-data \
     make-data-fs \
+    postgresql \
  "
 
 WIFI_SUPPORT = " \
@@ -62,7 +63,10 @@ RPI_STUFF = " \
  "
 
 REEFTAS = " \
+     reeftas-db \
+     reeftas-db-initial-setup \
      reeftas-webui \
+     reeftas-svr-initial-setup \
 "
 
 IMAGE_INSTALL += " \
