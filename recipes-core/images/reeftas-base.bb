@@ -5,30 +5,11 @@ LICENSE = "MIT"
 IMAGE_FEATURES += "package-management splash"
 IMAGE_LINGUAS = "en-us"
 
-inherit core-image
-
-DEPENDS += "bcm2835-bootfiles"
+include recipes-core/images/rpi-basic-image.bb
 
 CORE_OS = " \
-    openssh \
-    openssh-keygen \
-    openssh-sftp-server \
     tzdata \
-    expand-data \
-    make-data-fs \
     postgresql \
- "
-
-WIFI_SUPPORT = " \
-    crda \
-    iw \
-    linux-firmware-brcm43430 \
-    linux-firmware-ralink \
-    linux-firmware-rtl8192ce \
-    linux-firmware-rtl8192cu \
-    linux-firmware-rtl8192su \
-    wireless-tools \
-    wpa-supplicant \
  "
 
 EXTRA_TOOLS_INSTALL = " \
@@ -55,13 +36,6 @@ EXTRA_TOOLS_INSTALL = " \
     dnsmasq \
  "
 
-RPI_STUFF = " \
-    rpio \
-    rpi-gpio \
-    userland \
-    wiringpi \
- "
-
 REEFTAS = " \
      reeftas-db \
      reeftas-db-initial-setup \
@@ -73,8 +47,6 @@ IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${RPI_STUFF} \
-    ${WIFI_SUPPORT} \
-    ${REEFTAS} \
 "
 
 set_local_timezone() {

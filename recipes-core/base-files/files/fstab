@@ -5,5 +5,7 @@ proc                 /proc                proc       defaults              0  0
 devpts               /dev/pts             devpts     mode=0620,gid=5       0  0
 tmpfs                /run                 tmpfs      mode=0755,nodev,nosuid,strictatime 0  0
 tmpfs                /var/volatile        tmpfs      defaults              0  0
-/dev/mmcblk0p1       /boot                auto       defaults              0  0
-/dev/mmcblk0p3       /data                ext4       defaults              0  0
+
+
+#@REEFTAS_BOOT_PART@  /boot/bootloader     @REEFTAS_BOOT_PART_FSTYPE@      defaults              0  0
+@REEFTAS_VAR_PART@   /var                 @REEFTAS_FSTYPE@                defaults        0  0
