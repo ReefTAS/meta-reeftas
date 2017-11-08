@@ -17,7 +17,7 @@ DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
 
 MACHINE_FEATURES_remove = "apm"
 
-IMAGE_FSTYPES = "tar.xz"
+IMAGE_FSTYPES = "tar.xz wic"
 
 DISTRO = "poky"
 
