@@ -1,5 +1,3 @@
-EXTRA_IMAGEDEPENDS_append = "${@bb.utils.contains('DISTRO_FEATURES', 'reeftas-uboot', ' u-boot', '', d)}"
-
 REEFTAS_UBOOT_ENV_STORAGE_DEVICE_OFFSET ??= "${@eval('${MENDER_PARTITION_ALIGNMENT_KB} * 1024')}"
 
 # u-boot environment file
