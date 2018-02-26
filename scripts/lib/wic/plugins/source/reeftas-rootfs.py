@@ -13,7 +13,7 @@ from wic import WicError
 from wic.pluginbase import SourcePlugin
 from wic.pluginbase import PluginMgr
 
-from wic.utils.misc import get_bitbake_var, exec_cmd
+from wic.misc import get_bitbake_var
 
 logger = logging.getLogger('reeftas-rootfs')
 
