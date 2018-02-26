@@ -19,8 +19,6 @@ FEATURE_PACKAGES_reeftas-coreos ?= "packagegroup-reeftas-coreos"
 FEATURE_PACKAGES_reeftas-coreos[optional]  ?=  "1"
 FEATURE_PACKAGES_reeftas-tools ?= "packagegroup-reeftas-tools"
 FEATURE_PACKAGES_reeftas-tools[optional]  ?=  "1"
-FEATURE_PACKAGES_reeftas-uboot ?= "packagegroup-reeftas-uboot"
-FEATURE_PACKAGES_reeftas-uboot[optional]  ?=  "1"
 
 set_local_timezone() {
     ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
