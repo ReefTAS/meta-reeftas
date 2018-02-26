@@ -1,17 +1,17 @@
 LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${WORKDIR}/licenses/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
+LIC_FILES_CHKSUM = "file://${COREBASE}/files/common-licenses/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
 SRC_URI += "\
 	file://reeftas_svr \
 	file://reeftas_svr_initial_setup.sh \
-        file://reeftas_svr_initial_setup.service \
-        file://licenses/Apache-2.0 \
+    file://reeftas_svr_initial_setup.service \
+    file://licenses/Apache-2.0 \
 "
 
 FILES_${PN} += "\
 	${REEFTAS_DATADIR} \
 	${bindir}/reeftas_svr_initial_setup.sh \
-        ${systemd_unitdir}/system/*.service \
+    ${systemd_unitdir}/system/*.service \
 "
 
 inherit systemd useradd
@@ -50,3 +50,7 @@ do_install() {
 	sed -i -e 's,@BINDIR@,${bindir},g' \
         		${D}${systemd_unitdir}/system/reeftas_svr_initial_setup.service
 }
+
+RDEPENDS_${PN} = " \
+    bash \
+"
