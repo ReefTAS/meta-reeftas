@@ -9,7 +9,3 @@ RDEPENDS_${PN} += "\
     postgresql \
     dnsmasq \
 "
-
-RDEPENDS_${PN} += "\
-    reeftas-useradd\
-"

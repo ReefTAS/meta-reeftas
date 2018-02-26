@@ -14,7 +14,17 @@ FILES_${PN} += "\
         ${systemd_unitdir}/system/*.service \
 "
 
-inherit systemd
+inherit systemd useradd
+
+# server needs to configure user and group
+usernum = "30"
+groupnum = "30"
+USERADD_PACKAGES = "${PN}"
+USERADD_PARAM_${PN} = "-M -g ${REEFTAS_GROUP} -o -r \
+    -s /bin/bash -c 'ReefTAS Server' -u ${usernum} ${REEFTAS_USER}"
+GROUPADD_PARAM_${PN} = "-g ${groupnum} -o -r ${REEFTAS_GROUP}"
+
+
 SYSTEMD_SERVICE_${PN} = "reeftas_svr_initial_setup.service"
 
 

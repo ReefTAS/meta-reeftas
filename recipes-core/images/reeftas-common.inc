@@ -13,10 +13,10 @@ COMMON_FEATURES = " \
 
 IMAGE_FEATURES += "${COMMON_FEATURES}"
 
+FEATURE_PACKAGES_reeftas-coreos ?= "packagegroup-reeftas-coreos"
+
 FEATURE_PACKAGES_reeftas ?= "packagegroup-reeftas"
 FEATURE_PACKAGES_reeftas[optional]  ?=  "1"
-FEATURE_PACKAGES_reeftas-coreos ?= "packagegroup-reeftas-coreos"
-FEATURE_PACKAGES_reeftas-coreos[optional]  ?=  "1"
 FEATURE_PACKAGES_reeftas-tools ?= "packagegroup-reeftas-tools"
 FEATURE_PACKAGES_reeftas-tools[optional]  ?=  "1"
 
