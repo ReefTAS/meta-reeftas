@@ -66,6 +66,10 @@ REEFTAS_PARTITION_ALIGNMENT_KB_DEFAULT = "4098"
 REEFTAS_STORAGE_TOTAL_SIZE_MB ??= "${REEFTAS_STORAGE_TOTAL_SIZE_MB_DEFAULT}"
 REEFTAS_STORAGE_TOTAL_SIZE_MB_DEFAULT = "2048"
 #----------------------------------------------------------------------
+# Reeftas User and Group
+#----------------------------------------------------------------------
+REEFTAS_USER="reeftas"
+REEFTAS_GROUP="reeftas"
 
 include reeftas-uboot.inc
 include reeftas-setup-install.inc
