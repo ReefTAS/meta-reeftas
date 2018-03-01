@@ -16,4 +16,5 @@ part  --source reeftas-rootfs --sourceparams "size-varname=REEFTAS_CALC_ROOTFS_S
 #var partition
 part  --source subdir-as-partition --sourceparams "size-varname=REEFTAS_VAR_PART_SIZE,fstype-varname=REEFTAS_FSTYPE,align-varname=REEFTAS_PARTITION_ALIGNMENT_KB,subdir=var" --ondisk mmcblk --label var
 
-
+#data partition
+part --source subdir-as-partition --sourceparams "size-varname=REEFTAS_DATA_PART_SIZE,fstype-varname=REEFTAS_FSTYPE,align-varname=REEFTAS_PARTITION_ALIGNMENT_KB,subdir=data" --ondisk mmcblk --label data

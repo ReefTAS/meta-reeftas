@@ -9,3 +9,8 @@ RDEPENDS_${PN} += "\
     postgresql \
     dnsmasq \
 "
+
+# Packages
+RDEPENDS_${PN} += "\
+  data-part \
+"
