@@ -1,10 +1,13 @@
-do_image_wic[depends] += "wic-tools:do_populate_sysroot dosfstools-native:do_populate_sysroot mtools-native:do_populate_sysroot rsync-native:do_populate_sysroot"
+do_image_wic[depends] += "\
+      wic-tools:do_populate_sysroot \
+      syslinux-native:do_populate_sysroot \
+      dosfstools-native:do_populate_sysroot \
+      mtools-native:do_populate_sysroot \
+      rsync-native:do_populate_sysroot\
+"
 
-
-WICVARS_append = " \
-    REEFTAS_PARTITION_ALIGNMENT_KB \
-    REEFTAS_FSTYPE \
-    REEFTAS_CALC_ROOTFS_SIZE \
-    REEFTAS_VAR_PART_SIZE \
-    REEFTAS_DATA_PART_SIZE \
+#fstab is updated in base-files. Hence do not attempt to update it from wic
+WIC_CREATE_EXTRA_ARGS += "\
+  -D \
+  --no-fstab-update\
 "

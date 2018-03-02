@@ -1,0 +1,19 @@
+# short-description:
+# long-description:
+
+
+# Note
+# Providing mount point as sourceparams will not update the mount point in fstab.
+# This is because imager plugin updates fstab entries before subdir-as-partition plugin has a chance to update mountpoint
+# Therefore mount points should be specified in base-files fstab
+part /boot --source bootimg-partition --ondisk ${REEFTAS_STORAGE_DEVICE} --fstype ${REEFTAS_BOOT_PART_FSTYPE} --label boot --active --align ${REEFTAS_PARTITION_ALIGNMENT}  --size ${REEFTAS_BOOT_PART_SIZE_MB}
+
+part / --source rootfs --ondisk ${REEFTAS_STORAGE_DEVICE} --fstype ${REEFTAS_ROOTFS_PART_A_FSTYPE} --fixed-size ${REEFTAS_CALC_ROOTFS_SIZE}K  --align ${REEFTAS_PARTITION_ALIGNMENT} --label ${REEFTAS_ROOTFS_PART_A_LABEL} --exclude "var/"
+
+part / --source rootfs --ondisk ${REEFTAS_STORAGE_DEVICE} --fstype ${REEFTAS_ROOTFS_PART_B_FSTYPE} --fixed-size ${REEFTAS_CALC_ROOTFS_SIZE}K  --align ${REEFTAS_PARTITION_ALIGNMENT} --label ${REEFTAS_ROOTFS_PART_B_LABEL} --exclude "var/"
+
+part /var --source rootfs --ondisk ${REEFTAS_STORAGE_DEVICE} --fstype ${REEFTAS_VAR_FSTYPE} --align ${REEFTAS_PARTITION_ALIGNMENT} --label ${REEFTAS_VAR_LABEL}
+
+part /data --source rootfs --ondisk ${REEFTAS_STORAGE_DEVICE} --fstype ${REEFTAS_DATA_FSTYPE} --align ${REEFTAS_PARTITION_ALIGNMENT} --label ${REEFTAS_DATA_LABEL}
+
+bootloader --ptable ${REEFTAS_PTABLE_TYPE}

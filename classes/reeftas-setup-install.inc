@@ -1,7 +1,7 @@
 # Estimate how much space may be lost due to partitioning alignment. Use a
 # simple heuristic for now - 4 partitions * alignment
 def reeftas_get_part_overhead(d):
-    align = d.getVar('REEFTAS_PARTITION_ALIGNMENT_KB', True)
+    align = d.getVar('REEFTAS_PARTITION_ALIGNMENT', True)
     if align:
         return 4 * int(align)
     return 0
